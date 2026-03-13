@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  
+     /*BOTONES */
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-muni-700 hover:bg-muni-800 text-white
+           font-semibold text-sm px-4 py-2 rounded-xl border-0 cursor-pointer
+           transition-all duration-200 shadow-sm no-underline;
+  }
+  .btn-primary:disabled {
+    @apply opacity-60 cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-700
+           font-medium text-sm px-4 py-2 rounded-xl border border-slate-200
+           cursor-pointer transition-all duration-200 no-underline;
+  }
+  .btn-danger {
+    @apply inline-flex items-center gap-2 bg-escudo-rojo hover:bg-red-700 text-white
+           font-semibold text-sm px-4 py-2 rounded-xl border-0 cursor-pointer
+           transition-all duration-200;
+  }
+
+  /* INPUTS*/
+  .input {
+    @apply w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm
+           bg-white text-slate-900 outline-none
+           focus:ring-2 focus:ring-muni-700 focus:border-transparent
+           transition-all duration-200;
+  }
+
+  /*CARD*/
+  .card {
+    @apply bg-white rounded-2xl border border-slate-200 shadow-card;
+  }
+
+  /*PAGE HEADERS*/
+  .page-title {
+    @apply text-2xl font-bold text-slate-800;
+  }
+  .page-subtitle {
+    @apply text-slate-500 text-sm mt-0.5;
+  }
+
+  /*TABLAS */
+  .tabla-header {
+    @apply bg-slate-50 border-b border-slate-200;
+  }
+  .tabla-th {
+    @apply text-left px-4 py-3 text-xs font-semibold text-slate-500 uppercase tracking-wide;
+  }
+  .tabla-td {
+    @apply px-4 py-3 text-sm text-slate-700;
+  }
+  .tabla-tr {
+    @apply border-b border-slate-50 hover:bg-slate-50 transition-colors;
+  }
+}
