@@ -22,8 +22,9 @@ const app = express();
 // Helmet: headers de seguridad HTTP (previene XSS, clickjacking, etc.)
 app.use(helmet());
 
-// CORS: solo permite requests desde el frontend
-app.use(cors({ origin: 'http://localhost:5173' }));
+// CORS: permite requests desde el frontend configurado
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
+app.use(cors({ origin: FRONTEND_URL }));
 
 // Rate limiting general — amplio para uso normal de oficina
 const limiterGeneral = rateLimit({

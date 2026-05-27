@@ -1,32 +1,39 @@
 # Sistema de Acuerdos Municipales
 
-Sistema web desarrollado para la Municipalidad de Flores que permite registrar, organizar y consultar acuerdos municipales provenientes de las actas del Concejo Municipal.
+Sistema web desarrollado para la Municipalidad de Flores para registrar, organizar y consultar acuerdos municipales provenientes de las actas del Concejo Municipal.
 
-## Tecnologías utilizadas
+## Tecnologias
 
-* Node.js
-* Express.js
-* MySQL
-* React
-* Vite
-* Tailwind CSS
+- Node.js
+- Express.js
+- MySQL
+- React
+- Vite
+- Tailwind CSS
 
-## Estructura del proyecto
+## Estructura
 
-backend/ → API y lógica del sistema
+```text
+backend/   API REST y logica del sistema
+frontend/  Interfaz web
+```
 
-frontend/ → interfaz de usuario
+## Instalacion
 
-## Instalación
+Para instalar el sistema desde cero, seguir la guia:
 
-1. Clonar el repositorio
-2. Instalar dependencias en **backend** y **frontend**
-3. Configurar la base de datos en MySQL
-4. Ejecutar el sistema
+[INSTALACION_TI.md](./INSTALACION_TI.md)
+
+Resumen:
+
+1. Instalar Node.js, MySQL y Git.
+2. Ejecutar el script `sistema_acuerdos.sql` en MySQL.
+3. Crear `backend/.env` usando `backend/.env.example` como referencia.
+4. Instalar dependencias en `backend` y `frontend`.
+5. Levantar backend y frontend en consolas separadas.
 
 ## Autor
 
-María del Carmen Oviedo Hernández
+Maria del Carmen Oviedo Hernandez
 
-Proyecto desarrollado para la Municipalidad de Flores
-2026
+Proyecto desarrollado para la Municipalidad de Flores, 2026.

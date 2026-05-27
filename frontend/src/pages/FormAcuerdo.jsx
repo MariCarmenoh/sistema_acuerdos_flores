@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import api from '../api/axios';
+import api, { API_BASE_URL } from '../api/axios';
 import Navbar from '../components/Navbar';
 import ModalConfirmar from '../components/ModalConfirmar';
 import toast from 'react-hot-toast';
@@ -163,7 +163,7 @@ const FormAcuerdo = () => {
     const verOficio = (id_oficio) => {
         const numAcuerdo = acuerdoGuardado || id;
         const token = localStorage.getItem('token');
-        window.open(`http://localhost:3000/api/acuerdos/${numAcuerdo}/oficios/${id_oficio}/pdf?token=${token}`, '_blank');
+        window.open(`${API_BASE_URL}/acuerdos/${numAcuerdo}/oficios/${id_oficio}/pdf?token=${token}`, '_blank');
     };
 
     return (

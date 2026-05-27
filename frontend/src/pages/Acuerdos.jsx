@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import api from '../api/axios';
+import api, { API_BASE_URL } from '../api/axios';
 import Navbar from '../components/Navbar';
 import Semaforo from '../components/Semaforo';
 import toast from 'react-hot-toast';
@@ -79,7 +79,7 @@ const Acuerdos = () => {
 
     const verActa = (numero_acta) => {
         const token = localStorage.getItem('token');
-        window.open(`http://localhost:3000/api/actas/${numero_acta}/pdf?token=${token}`, '_blank');
+        window.open(`${API_BASE_URL}/actas/${numero_acta}/pdf?token=${token}`, '_blank');
     };
 
     return (
@@ -268,7 +268,7 @@ const Acuerdos = () => {
                                         const token = localStorage.getItem('token');
                                         return (
                                             <button key={o.id_oficio}
-                                                onClick={() => window.open(`http://localhost:3000/api/acuerdos/${detalle.numero_acuerdo}/oficios/${o.id_oficio}/pdf?token=${token}`, '_blank')}
+                                                onClick={() => window.open(`${API_BASE_URL}/acuerdos/${detalle.numero_acuerdo}/oficios/${o.id_oficio}/pdf?token=${token}`, '_blank')}
                                                 className="w-full flex items-center gap-2.5 px-3 py-2 bg-red-50 hover:bg-red-100 rounded-lg transition-colors text-left">
                                                 <MdDescription size={16} className="text-red-500 flex-shrink-0" />
                                                 <span className="text-sm text-red-700 font-medium truncate max-w-[200px]">

@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import api from '../api/axios';
+import api, { API_BASE_URL } from '../api/axios';
 import Navbar from '../components/Navbar';
 import toast from 'react-hot-toast';
 import { MdAdd, MdPictureAsPdf, MdSearch, MdClear, MdCalendarToday, MdPerson, MdEdit, MdDelete } from 'react-icons/md';
@@ -45,7 +45,7 @@ const Actas = () => {
 
     const verPdf = (numero_acta) => {
         const token = localStorage.getItem('token');
-        window.open(`http://localhost:3000/api/actas/${numero_acta}/pdf?token=${token}`, '_blank');
+        window.open(`${API_BASE_URL}/actas/${numero_acta}/pdf?token=${token}`, '_blank');
     };
 
     return (
